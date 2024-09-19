@@ -3,6 +3,8 @@
 #include "argument_parser.h"
 
 int main() {
+  OWID owid_offset = OWID_USER_DEFINED;
+  owid_offset = ArgumentParser_Init(owid_offset);
 
   OWO_String_t* fullname = OWString_ConstructSimple("alpha");
   OWO_String_t* shortname = OWString_ConstructSimple("a");
