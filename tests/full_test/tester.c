@@ -111,5 +111,18 @@ int main() {
     if(ret != 0) return ret;
   }
 
+  printf("TestCase #6\n");
+  {
+    int argc = 4;
+    const char* argv[argc];
+    argv[0] = "prog_name";
+    argv[1] = "-g";
+    argv[2] = "-a";
+    argv[3] = "3";
+
+    int ret = TestCase(argc, argv, true, false, true);
+    if(ret != 0) return ret;
+  }
+
   return 0;
 }

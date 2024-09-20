@@ -126,7 +126,7 @@ int ArgumentParser_Process(O_ArgumentParser_t* this, OWO_String_t* argname, OWO_
 
   if(is_short_name && !value_found) {
     obj->current_sub_index += 1;
-    if(obj->current_sub_index >= strlen(obj->argv[obj->current_index])) {
+    if(obj->current_sub_index + 1 >= strlen(obj->argv[obj->current_index])) {
       obj->current_sub_index = 0;
       obj->current_index += 1;
     }
