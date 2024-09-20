@@ -42,7 +42,7 @@ O_ArgumentParser_t* ArgumentParser_Construct(int argc, const char** argv) {
   if(this == NULL) return NULL;
   ArgumentParser_t* const obj = this->object;
 
-  obj->current_index = 0;
+  obj->current_index = 1;
   obj->current_sub_index = 0;
   obj->argc = argc;
   obj->argv = argv;
@@ -81,6 +81,8 @@ const char* __Helper__ArgumentParser_ProcessValue(O_ArgumentParser_t* this, bool
   return val;
 }
 
+#include <stdio.h>
+
 int ArgumentParser_Process(O_ArgumentParser_t* this, OWO_String_t* argname, OWO_String_t* argval) {
   OWString_SetSimple(argname, "");
   OWString_SetSimple(argval, "");
@@ -88,8 +90,9 @@ int ArgumentParser_Process(O_ArgumentParser_t* this, OWO_String_t* argname, OWO_
   ArgumentParser_t* const obj = OWObject_FindObjectInClass(this, OWID_ArgumentParser_t);
   if(obj == NULL) return -1;
 
+  printf("current_index: %d, argc: %d\n", obj->current_index, obj->argc);
   if(obj->current_index >= obj->argc
-     || obj->current_sub_index >= strlen(obj->argv[obj->current_index])) {
+     || obj->current_sub_index + 1 >= strlen(obj->argv[obj->current_index])) {
     return 1;
   }
 
@@ -126,6 +129,7 @@ int ArgumentParser_Process(O_ArgumentParser_t* this, OWO_String_t* argname, OWO_
 
   if(is_short_name && !value_found) {
     obj->current_sub_index += 1;
+    printf("current_sub_index: %d, strlen: %ld\n", obj->current_sub_index, strlen(obj->argv[obj->current_index]));
     if(obj->current_sub_index >= strlen(obj->argv[obj->current_index])) {
       obj->current_sub_index = 0;
       obj->current_index += 1;

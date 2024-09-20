@@ -48,12 +48,13 @@ int main() {
 
   printf("TestCase #1\n");
   {
-    int argc = 4;
+    int argc = 5;
     const char* argv[argc];
-    argv[0] = "--alpha";
-    argv[1] = "3";
-    argv[2] = "-gb4";
-    argv[3] = "Undefined";
+    argv[0] = "prog_name";
+    argv[1] = "--alpha";
+    argv[2] = "3";
+    argv[3] = "-gb4";
+    argv[4] = "Undefined";
 
     int ret = TestCase(argc, argv, true, true, true);
     if(ret != 0) return ret;
@@ -61,11 +62,12 @@ int main() {
 
   printf("TestCase #2\n");
   {
-    int argc = 3;
+    int argc = 4;
     const char* argv[argc];
-    argv[0] = "--alpha";
-    argv[1] = "3";
-    argv[2] = "-gb4";
+    argv[0] = "prog_name";
+    argv[1] = "--alpha";
+    argv[2] = "3";
+    argv[3] = "-gb4";
 
     int ret = TestCase(argc, argv, true, true, true);
     if(ret != 0) return ret;
@@ -73,11 +75,12 @@ int main() {
 
   printf("TestCase #3\n");
   {
-    int argc = 3;
+    int argc = 4;
     const char* argv[argc];
-    argv[0] = "--alpha";
-    argv[1] = "3";
-    argv[2] = "-b4";
+    argv[0] = "prog_name";
+    argv[1] = "--alpha";
+    argv[2] = "3";
+    argv[3] = "-b4";
 
     int ret = TestCase(argc, argv, true, true, false);
     if(ret != 0) return ret;
@@ -85,11 +88,12 @@ int main() {
 
   printf("TestCase #4\n");
   {
-    int argc = 3;
+    int argc = 4;
     const char* argv[argc];
-    argv[0] = "--alpha";
-    argv[1] = "3";
-    argv[2] = "-g";
+    argv[0] = "prog_name";
+    argv[1] = "--alpha";
+    argv[2] = "3";
+    argv[3] = "-g";
 
     int ret = TestCase(argc, argv, true, false, true);
     if(ret != 0) return ret;
@@ -97,10 +101,11 @@ int main() {
 
   printf("TestCase #5\n");
   {
-    int argc = 2;
+    int argc = 3;
     const char* argv[argc];
-    argv[0] = "-ga";
-    argv[1] = "3";
+    argv[0] = "prog_name";
+    argv[1] = "-ga";
+    argv[2] = "3";
 
     int ret = TestCase(argc, argv, true, false, true);
     if(ret != 0) return ret;
