@@ -11,6 +11,7 @@ project(ArgumentParser
 	DESCRIPTION "A library for cross-platform argument parsing"
 	LANGUAGES C)
 
+include(GNUInstallDirs)
 include_directories(includes)
 link_libraries(objectwrapper)
 
