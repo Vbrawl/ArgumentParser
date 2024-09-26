@@ -48,79 +48,73 @@ int main() {
 
   printf("TestCase #1\n");
   {
-    int argc = 5;
-    const char* argv[argc];
+    char* argv[5];
     argv[0] = "prog_name";
     argv[1] = "--alpha";
     argv[2] = "3";
     argv[3] = "-gb4";
     argv[4] = "Undefined";
 
-    int ret = TestCase(argc, argv, true, true, true);
+    int ret = TestCase(5, argv, true, true, true);
     if(ret != 0) return ret;
   }
 
   printf("TestCase #2\n");
   {
-    int argc = 4;
-    const char* argv[argc];
+    char* argv[4];
     argv[0] = "prog_name";
     argv[1] = "--alpha";
     argv[2] = "3";
     argv[3] = "-gb4";
 
-    int ret = TestCase(argc, argv, true, true, true);
+    int ret = TestCase(4, argv, true, true, true);
     if(ret != 0) return ret;
   }
 
   printf("TestCase #3\n");
   {
-    int argc = 4;
-    const char* argv[argc];
+    char* argv[4];
     argv[0] = "prog_name";
     argv[1] = "--alpha";
     argv[2] = "3";
     argv[3] = "-b4";
 
-    int ret = TestCase(argc, argv, true, true, false);
+    int ret = TestCase(4, argv, true, true, false);
     if(ret != 0) return ret;
   }
 
   printf("TestCase #4\n");
   {
-    int argc = 4;
-    const char* argv[argc];
+    char* argv[4];
     argv[0] = "prog_name";
     argv[1] = "--alpha";
     argv[2] = "3";
     argv[3] = "-g";
 
-    int ret = TestCase(argc, argv, true, false, true);
+    int ret = TestCase(4, argv, true, false, true);
     if(ret != 0) return ret;
   }
 
   printf("TestCase #5\n");
   {
-    int argc = 3;
-    const char* argv[argc];
+    char* argv[3];
     argv[0] = "prog_name";
     argv[1] = "-ga";
     argv[2] = "3";
 
-    int ret = TestCase(argc, argv, true, false, true);
+    int ret = TestCase(3, argv, true, false, true);
     if(ret != 0) return ret;
   }
 
   printf("TestCase #6\n");
   {
-    int argc = 4;
-    const char* argv[argc];
+    char* argv[4];
     argv[0] = "prog_name";
     argv[1] = "-g";
     argv[2] = "-a";
     argv[3] = "3";
 
-    int ret = TestCase(argc, argv, true, false, true);
+    int ret = TestCase(4, argv, true, false, true);
     if(ret != 0) return ret;
   }
 
