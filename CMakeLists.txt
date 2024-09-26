@@ -34,8 +34,8 @@ function(MAKE_LIBRARY_VARS prefix lib result_include result_lib)
 endfunction()
 
 # Ensure correct path format
-END_NO_SLASH(${OW_PREFIX} OW_PREFIX)
-MAKE_LIBRARY_VARS(${OW_PREFIX} "objectwrapper" OW_INCLUDE OW_LIB)
+END_NO_SLASH("${OW_PREFIX}" OW_PREFIX)
+MAKE_LIBRARY_VARS("${OW_PREFIX}" "objectwrapper" OW_INCLUDE OW_LIB)
 message("${OW_LIB}")
 
 if(CMAKE_HOST_UNIX)
